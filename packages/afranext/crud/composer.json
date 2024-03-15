@@ -1,0 +1,15 @@
+{
+    "name": "afranext/crud",
+    "autoload": {
+        "psr-4": {
+            "Afranext\\Crud\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "A Sharifineyestani",
+            "email": "asharifineyestani@gmail.com"
+        }
+    ],
+    "require": {}
+}
