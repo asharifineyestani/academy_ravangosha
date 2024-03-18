@@ -10,6 +10,11 @@ class Category extends Model
     use HasFactory;
 
 
-    protected $fillable = ['title', 'parent_id', 'thumbnail_path'];
+    protected $fillable = ['title', 'parent_id', 'thumbnail_path','slug'];
+
+    public function books()
+    {
+        return $this->hasMany(Book::class);
+    }
 
 }

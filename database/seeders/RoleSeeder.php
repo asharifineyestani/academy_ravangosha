@@ -20,13 +20,14 @@ class RoleSeeder extends Seeder
 
         $superAdmin = Role::create(['name' => 'super-admin']);
         $instructor = Role::create(['name' => 'instructor']);
+        $seller = Role::create(['name' => 'seller']);
 
 
 
         User::find(1)->assignRole($superAdmin);
         User::find(2)->assignRole($instructor);
         User::find(3)->assignRole($instructor);
-        User::find(4)->assignRole($instructor);
+        User::find(4)->assignRole($seller);
 
 
     }
