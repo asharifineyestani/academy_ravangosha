@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Category;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class CategorySeeder extends Seeder
 {
@@ -14,52 +15,22 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-        //
-        Category::create([
-            'title'=> 'برنامه نویسی',
-            'thumbnail_path' => '/images/categories/1.svg'
-        ]);
+        // حذف داده‌های موجود در جدول قبل از افزودن داده‌های جدید
+//        DB::table('categories')->truncate();
 
-//        Category::create([
-//            'title'=> 'بازار سرمایه',
-//            'thumbnail_path' => '/images/categories/2.svg'
-//        ]);
-//        Category::create([
-//            'title'=> 'استارت آپ',
-//            'thumbnail_path' => '/images/categories/3.svg'
-//        ]);
-//
-//        Category::create([
-//            'title'=> 'مهندسی نرم افزار',
-//            'thumbnail_path' => '/images/categories/4.svg'
-//        ]);
-//        Category::create([
-//            'title'=> 'هوش مصنوعی',
-//            'thumbnail_path' => '/images/categories/5.svg'
-//        ]);
-//
-//        Category::create([
-//            'title'=> 'ریاضیات',
-//            'thumbnail_path' => '/images/categories/6.svg'
-//        ]);
-//        Category::create([
-//            'title'=> 'علوم انسانی',
-//            'thumbnail_path' => '/images/categories/7.svg'
-//        ]);
-//
-//        Category::create([
-//            'title'=> 'هنر',
-//            'thumbnail_path' => '/images/categories/8.svg'
-//        ]);
-//        Category::create([
-//            'title' => 'رباتیک',
-//            'thumbnail_path' => '/images/categories/9.svg'
-//        ]);
-//
-//        Category::create([
-//            'title' => 'داده کاوی',
-//            'thumbnail_path' => '/images/categories/10.svg'
-//        ]);
+        // افزودن داده‌های پیشفرض
+        $categories = [
+            ['id'=> 1,'slug' => 'self-development', 'title' => 'توسعه فردی'],
+            ['id'=> 2,'slug' => 'academic', 'title' => 'تخصصی'],
+            ['id'=> 3,'slug' => 'relationships', 'title' => 'روابط و عشق'],
+            ['id'=> 4,'slug' => 'mental-health', 'title' => 'سلامت روان'],
+            ['id'=> 5,'slug' => 'parenting', 'title' => 'فرزند آوری'],
+            ['id'=> 6,'slug' => 'business', 'title' => 'کسب و کار'],
+            // ...
+        ];
+
+        // افزودن داده‌ها به جدول
+        DB::table('categories')->insert($categories);
 
 
     }

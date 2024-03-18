@@ -19,32 +19,17 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
 
-//        \App\Models\Solicitation::factory(20)->create();
 
-//        $curl = new VideoCurl();
-//        $curl->updateChannels();
 
 
         $this->call([
-            MenuSeeder::class,
-            TagSeeder::class,
-            UserSeeder::class,
-            RoleSeeder::class,
-            CourseSeeder::class,
-//            TopicSeeder::class,
-//            VideoSeeder::class,
-//            FeedbackSeeder::class,
-
-//            TaggableSeeder::class,
-//            PageSeeder::class,
+//            UserSeeder::class,
+//            RoleSeeder::class,
             CategorySeeder::class,
 
         ]);
 
 
-//        \App\Models\Comment::factory(10)->create();
-//        \App\Models\Faq::factory(100)->create();
-//        \App\Models\Post::factory(17)->create();
 
 
 

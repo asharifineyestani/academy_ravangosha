@@ -7,6 +7,9 @@ use Illuminate\Support\Facades\Route;
 
 
 
+
+Route::resource('books', \App\Http\Controllers\BookController::class);
+
 /*
 |--------------------------------------------------------------------------
 | Curl [cronJobs]
