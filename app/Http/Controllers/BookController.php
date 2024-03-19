@@ -31,7 +31,7 @@ class BookController extends Controller
         // اضافه کردن پارامترهای URL به لینک‌های pagination
         $books->appends($request->only(['category_id', 'author_id', 'per']));
 
-        return view('public.books.index')->with([
+        return view('public_tv.books.index')->with([
             'books' => $books
         ]);
 
@@ -59,7 +59,7 @@ class BookController extends Controller
     public function show(string $slug)
     {
         //
-        return view('public.books.show')->with([
+        return view('public_tv.books.show')->with([
             'book' => Book::query()->where('slug',$slug)->first()
         ]);
     }
