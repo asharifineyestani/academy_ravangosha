@@ -6,6 +6,13 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\SolicitationController;
 
 
+
+Route::resource('books', \App\Http\Controllers\Public\BookController::class);
+
+
+
+Route::get('/tv/books', [\App\Http\Controllers\BookController::class, 'index']);
+
 /*
 |--------------------------------------------------------------------------
 | Show Video

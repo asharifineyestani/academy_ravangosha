@@ -1,42 +1,49 @@
-@extends('layouts.tv.master')
-@section('content')
-    <!-- header (relative style) -->
+@extends('layouts.edu.master')
+@section('main')
+    <main>
 
-    <!-- end header -->
+        <!-- =======================
+        Page Banner START -->
+{{--        @include('public.books.sections.header')--}}
+        <!-- =======================
+        Page Banner END -->
 
-    <!-- home -->
-    {{--    @include('sections.articles')--}}
-    <!-- end home -->
+        <!-- =======================
+        Page content START -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row">
+                    <!-- Main content START -->
+                    <div class="col-12">
 
-    <!-- catalog -->
-    <div class="catalog">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    @include('public.sections.books_header')
+                        <!-- Search option START -->
 
-                    @include('public.sections.books')
-                </div>
+                        <!-- Search option END -->
+
+                        <!-- Book Grid START -->
+                        @include('public.books.sections.books_header')
+                        @include('public.books.sections.books')
+                        <!-- Book Grid END -->
+
+                        <!-- Pagination START -->
+                        <div class="col-12">
+
+                            {{ $books->links() }}
+                        </div>
+                        <!-- Pagination END -->
+                    </div>
+                    <!-- Main content END -->
+                </div><!-- Row END -->
             </div>
+        </section>
+        <!-- =======================
+        Page content END -->
 
+        <!-- =======================
+        Action box START -->
+{{--       @include('public.books.sections.banner')--}}
+        <!-- =======================
+        Action box END -->
 
-        </div>
-    </div>
-    <!-- end catalog -->
-
-    <!-- subscriptions -->
-
-    <!-- end subscriptions -->
-
-    <!-- plan -->
-
-    <!-- end plan -->
-
-    <!-- videos -->
-
-    <!-- end videos -->
-
-    <!-- footer -->
-
-    <!-- end footer -->
+    </main>
 @endsection

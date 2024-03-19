@@ -131,3 +131,21 @@ function getCategories($limit)
 {
     return \App\Models\Category::query()->limit($limit)->get();
 }
+
+
+function getAuthorById($id)
+{
+    $author =  \App\Models\Author::query()->where('id',$id)->first();
+
+    if($author)
+        return $author->name;
+}
+
+
+function getCategoryById($id)
+{
+    $category =  \App\Models\Category::query()->where('id',$id)->first();
+
+    if($category)
+        return $category->title;
+}
