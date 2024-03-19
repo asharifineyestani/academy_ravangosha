@@ -60,7 +60,7 @@ class BookController extends Controller
     public function show(string $slug)
     {
         //
-        return view('public_tv.books.show')->with([
+        return view('public.books.show')->with([
             'book' => Book::query()->where('slug',$slug)->first()
         ]);
     }

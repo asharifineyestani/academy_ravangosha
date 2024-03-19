@@ -12,6 +12,7 @@ Route::resource('books', \App\Http\Controllers\Public\BookController::class);
 
 
 Route::get('/tv/books', [\App\Http\Controllers\BookController::class, 'index']);
+Route::get('/tv/books/{slug}', [\App\Http\Controllers\BookController::class, 'show']);
 
 /*
 |--------------------------------------------------------------------------
