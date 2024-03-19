@@ -22,3 +22,5 @@ package-lock.json
 /public/nxt/crud/
 /public/fonts/
 /public/media/
+/public/edu/*.html
+
