@@ -4,7 +4,7 @@
         <i class="bi bi-cart2 fs-4"></i>
     </a>
     <!-- badge -->
-    <span class="position-absolute top-0 start-100 translate-middle badge rounded-circle text-bg-success mt-2 mt-xl-3 ms-n3 smaller">5
+    <span class="position-absolute top-0 start-100 translate-middle badge rounded-circle text-bg-success mt-2 mt-xl-3 ms-n3 smaller">{{getTotalQuantity()}}
 								<span class="visually-hidden">unread messages</span>
 							</span>
 
@@ -17,38 +17,55 @@
             <div class="card-body p-0">
 
                 <!-- Cart item START -->
-                <div class="row p-3 g-2">
-                    <!-- Image -->
-                    <div class="col-3">
-                        <img class="rounded-2" src="/edu/assets/images/book/02.jpg" alt="avatar">
-                    </div>
-
-                    <div class="col-9">
-                        <!-- Title -->
-                        <div class="d-flex justify-content-between">
-                            <h6 class="m-0">کتاب اثر مرکب</h6>
-                            <a href="#" class="small text-primary-hover"><i class="bi bi-x-lg"></i></a>
+                @foreach(user()->carts as $item)
+                    <div class="row p-3 g-2">
+                        <!-- Image -->
+                        <div class="col-3">
+                            <img class="rounded-2" src="/edu/assets/images/book/02.jpg" alt="avatar">
                         </div>
-                        <!-- Select item -->
-                        <form class="choices-sm pt-2 col-4">
-                            <select class="form-select js-choice border-0 bg-transparent" data-search-enabled="false">
-                                <option>1</option>
-                                <option selected>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                            </select>
 
-                        </form>
+                        <div class="col-9">
+                            <!-- Title -->
+                            <div class="d-flex justify-content-between">
+                                <h6 class="m-0">کتاب اثر مرکب</h6>
+
+
+                            </div>
+
+                            <div>
+                                <a href="/cart/increase/{{$item->id}}"
+                                   class="btn btn-sm btn-success-soft px-2 me-1 mb-1 mb-md-0">
+                                    <i class="fas fa-fw fa-plus"></i></a>
+
+
+                                <span class=" px-2 me-1 mb-1 mb-md-0">
+                                                {{$item->quantity}}</span>
+
+                                @if($item->quantity > 1)
+
+                                    <a href="/cart/decrease/{{$item->id}}"
+                                       class="btn btn-sm btn-danger-soft px-2 me-1 mb-1 mb-md-0">
+                                        <i class="fas fa-fw fa-minus"></i></a>
+
+                                @else
+                                    <a title="حذف از سبد خرید" href="/cart/remove/{{$item->id}}"
+                                       class="btn btn-sm btn-danger-soft px-2 mb-0"><i
+                                            class="fas fa-fw fa-times"></i></a>
+                                @endif
+
+                            </div>
+                            <!-- Select item -->
+                        </div>
                     </div>
-                </div>
+                @endforeach
+
                 <!-- Cart item END -->
 
             </div>
             <!-- Button -->
             <div class="card-footer bg-transparent border-top py-3 text-center d-flex justify-content-between position-relative">
-                <span href="#" class=" mb-0">قابل پرداخت: <span>290000</span></span>
-                <a href="#" class="btn btn-sm btn-success mb-0">ثبت سفارش</a>
+                <span href="#" class=" mb-0">قابل پرداخت: <span>{{toman(getTotalPrice())}}</span></span>
+                <a href="/checkout/cart" class="btn btn-sm btn-success mb-0">ثبت سفارش</a>
             </div>
         </div>
     </div>

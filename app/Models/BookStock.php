@@ -20,4 +20,13 @@ class BookStock extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+
+    public static function isBookAvailable($bookId)
+    {
+        return self::where('book_id', $bookId)
+            ->where('quantity', '>', 0)
+            ->where('status', 1)
+            ->exists();
+    }
 }

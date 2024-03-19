@@ -81,4 +81,9 @@ class User extends Authenticatable implements Wallet
             return '/storage/defaults/user.png';
     }
 
+    public function carts()
+    {
+        return $this->hasMany(Cart::class);
+    }
+
 }

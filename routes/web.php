@@ -4,6 +4,22 @@ use App\Http\Controllers\CourseController;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\MessageController;
 use Illuminate\Support\Facades\Route;
+use \App\Http\Controllers\Member\CartController;
+
+
+/*
+|--------------------------------------------------------------------------
+| Cart
+|--------------------------------------------------------------------------
+|
+|
+*/
+Route::get('/checkout/cart', [CartController::class, 'index'])->name('member.carts.index');
+Route::get('/cart/add', [CartController::class, 'addToCart'])->name('member.carts.add');
+Route::get('/cart/increase/{id}', [CartController::class, 'increase'])->name('cart.increaseQuantity');
+Route::get('/cart/decrease/{id}', [CartController::class, 'decrease'])->name('cart.decreaseQuantity');
+Route::get('/cart/update/{id}', [CartController::class, 'updateCart'])->name('member.carts.update');
+Route::get('/cart/remove/{id}', [CartController::class, 'removeFromCart'])->name('member.carts.remove');
 
 
 

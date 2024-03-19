@@ -149,3 +149,28 @@ function getCategoryById($id)
     if($category)
         return $category->title;
 }
+
+function isBookAvailable($bookId)
+{
+    return \App\Models\BookStock::isBookAvailable($bookId);
+}
+
+function toman($amount) {
+    return number_format($amount).' تومان';
+}
+
+function getTotalQuantity()
+{
+    return \App\Models\Cart::totalQuantity();
+}
+
+function getTotalPrice()
+{
+    return \App\Models\Cart::totalPrice();
+}
+
+function user()
+{
+    return Auth::user();
+
+}
