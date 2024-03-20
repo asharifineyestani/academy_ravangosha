@@ -14,7 +14,11 @@ class CartController extends Controller
 {
     public function index()
     {
+
         $user = Auth::user();
+
+
+
         $items = Cart::with('stock')->where('user_id', $user->id)->get();
 
 
@@ -27,6 +31,13 @@ class CartController extends Controller
 
 
         $user = Auth::user();
+
+
+        if(!$user){
+            session()->put('previousUrl', url()->full());
+            return redirect('/login');
+        }
+
         $bookStockId = $request->input('book_stock_id');
         $quantity = 1;
 

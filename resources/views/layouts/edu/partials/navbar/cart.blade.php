@@ -17,11 +17,12 @@
             <div class="card-body p-0">
 
                 <!-- Cart item START -->
-                @foreach(user()->carts as $item)
+
+                @foreach(carts() as $item)
                     <div class="row p-3 g-2">
                         <!-- Image -->
                         <div class="col-3">
-                            <img class="rounded-2" src="/edu/assets/images/book/02.jpg" alt="avatar">
+                            <img class="rounded-2" src="{{$item->stock->book->book_image_url}}" alt="avatar">
                         </div>
 
                         <div class="col-9">

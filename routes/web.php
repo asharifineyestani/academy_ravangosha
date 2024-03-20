@@ -5,6 +5,13 @@ use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\MessageController;
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\Member\CartController;
+use \App\Http\Controllers\Public\VideoController;
+
+
+
+
+Route::get('/youtube/videos', [VideoController::class, 'index'])->name('youtube.index');
+Route::get('/youtube/videos/{id}', [VideoController::class, 'show'])->name('youtube.show');
 
 
 /*

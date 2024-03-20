@@ -6,7 +6,9 @@
                 <!-- Header left side START -->
                 <div class="col-3 col-md-4 col-xl-5 d-flex align-items-center ps-0">
                     <!-- Responsive navbar toggler -->
-                    <button class="navbar-toggler p-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler p-2" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+                            aria-label="Toggle navigation">
 						<span class="navbar-toggler-animation">
 							<span></span>
 							<span></span>
@@ -26,7 +28,8 @@
                 <div class="col-6 col-md-4 col-xl-2 text-center d-flex">
                     <a class="navbar-brand mx-auto" href="index.html">
                         <img class="navbar-brand-item light-mode-item" src="/edu/assets/images/logo.svg" alt="logo">
-                        <img class="navbar-brand-item dark-mode-item" src="/edu/assets/images/logo-light.svg" alt="logo">
+                        <img class="navbar-brand-item dark-mode-item" src="/edu/assets/images/logo-light.svg"
+                             alt="logo">
                     </a>
                 </div>
                 <!-- Logo END -->
@@ -35,13 +38,19 @@
                 <div class="col-3 col-md-4 col-xl-5 d-flex justify-content-end pe-0">
                     <ul class="nav flex-row align-items-center list-unstyled ms-xl-auto">
                         <!-- Dark-mode -->
-                        @include('layouts.edu.partials.navbar.dark_mode')
+
                         <!-- Add to cart -->
                         @include('layouts.edu.partials.navbar.cart')
                         <!-- Search -->
                         @include('layouts.edu.partials.navbar.search')
                         <!-- Sign In button -->
-                        @include('layouts.edu.partials.navbar.auth')
+                        @auth()
+                            @include('layouts.edu.partials.navbar.member')
+                        @else
+                            @include('layouts.edu.partials.navbar.dark_mode')
+                            @include('layouts.edu.partials.navbar.login')
+                        @endauth
+
                     </ul>
                 </div>
                 <!-- Header right side END -->

@@ -291,6 +291,15 @@ class Wizard extends Component
 
     public function redirectToDashboard()
     {
+
+        $previousUrl = session()->get('previousUrl');
+        if ($previousUrl) {
+            session()->forget('previousUrl');
+            return redirect($previousUrl);
+        }
+
+
+
         if ($this->backUrl)
             return redirect($this->backUrl);
 

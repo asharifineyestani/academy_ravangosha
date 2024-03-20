@@ -9,10 +9,17 @@ use App\Http\Controllers\SolicitationController;
 
 Route::resource('books', \App\Http\Controllers\Public\BookController::class);
 
+Route::controller(\App\Http\Controllers\Public\CourseController::class)->group(function () {
+    Route::get('/courses', 'index');
+    Route::get('/courses/{id}', 'show');
+    Route::get('/courses/{courseId}/videos/{videoId}', 'video');
+    Route::get('/videos/{videoId}', 'video2');
+});
 
 
-Route::get('/tv/books', [\App\Http\Controllers\BookController::class, 'index']);
-Route::get('/tv/books/{slug}', [\App\Http\Controllers\BookController::class, 'show']);
+
+Route::get('/old/books', [\App\Http\Controllers\BookController::class, 'index']);
+Route::get('/old/books/{slug}', [\App\Http\Controllers\BookController::class, 'show']);
 
 /*
 |--------------------------------------------------------------------------
@@ -73,10 +80,10 @@ Route::controller(SolicitationController::class)->group(function () {
 
 #course
 Route::controller(CourseController::class)->group(function () {
-    Route::get('/courses', 'index');
-    Route::get('/courses/{id}', 'show');
-    Route::get('/courses/{courseId}/videos/{videoId}', 'video');
-    Route::get('/videos/{videoId}', 'video2');
+    Route::get('/old/courses', 'index');
+    Route::get('/old/courses/{id}', 'show');
+    Route::get('/old/courses/{courseId}/videos/{videoId}', 'video');
+    Route::get('/old/videos/{videoId}', 'video2');
 });
 
 

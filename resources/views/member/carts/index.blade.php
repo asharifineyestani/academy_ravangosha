@@ -47,7 +47,23 @@
                                     <!-- Table body START -->
                                     <tbody class="border-top-0">
                                     <!-- Table item -->
-                                    @foreach($items as $item)
+
+
+                                    @if(count(carts()) < 1)
+                                        <div class="alert alert-info alert-dismissible fade show mt-2 mt-4 rounded-3" role="alert">
+                                            <!-- Avatar -->
+
+                                            <!-- Info -->
+                                           سبد خرید شما خالی است.
+
+
+                                        </div>
+                                    @endif
+
+
+
+
+                                    @foreach(carts() as $item)
                                         <tr>
                                             <!-- Course item -->
                                             <td>

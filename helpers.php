@@ -169,8 +169,13 @@ function getTotalPrice()
     return \App\Models\Cart::totalPrice();
 }
 
-function user()
+function carts()
 {
-    return Auth::user();
+    $carts = [];
+    if(Auth::user()) {
+      $carts = Auth::user()->carts;
+    }
+
+    return $carts;
 
 }

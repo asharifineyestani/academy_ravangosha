@@ -1,5 +1,5 @@
 @if(count($books) < 1)
-    <div class="alert alert-success alert-dismissible fade show mt-2 mt-4 rounded-3" role="alert">
+    <div class="alert alert-info alert-dismissible fade show mt-2 mt-4 rounded-3" role="alert">
         <!-- Avatar -->
 
         <!-- Info -->
