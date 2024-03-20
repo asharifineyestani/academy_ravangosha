@@ -7,7 +7,7 @@
         <li class="nav-item"><a class="nav-link" href="/">برگ نخست</a></li>
 
         <!-- Nav item 3 Account -->
-        <li class="nav-item"><a class="nav-link" href="/videos">ویدیو ها</a></li>
+        <li class="nav-item"><a class="nav-link" href="/youtube/videos">ویدیو ها</a></li>
         <li class="nav-item"><a class="nav-link" href="/courses">دوره ها</a></li>
 
         <!-- Nav item 4 Component-->
