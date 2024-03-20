@@ -8,6 +8,13 @@ use \App\Http\Controllers\Member\CartController;
 use \App\Http\Controllers\Public\VideoController;
 
 
+#student routes
+Route::group([
+    'prefix' => 'user',
+    'middleware' => ['web', 'auth']
+], function ($router) {
+    require base_path('routes/dashboard/user.php');
+});
 
 
 Route::get('/youtube/videos', [VideoController::class, 'index'])->name('youtube.index');

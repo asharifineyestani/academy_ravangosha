@@ -34,7 +34,7 @@ class Wizard extends Component
     const MAX_COUNT_SMS_PER_DAY = 5;
     const Home_ROUTE_INSTRUCTOR = '/instructor/dashboard';
     const Home_ROUTE_ADMIN = '/admin/dashboard';
-    const Home_ROUTE_STUDENT = '/student/dashboard';
+    const Home_ROUTE_STUDENT = '/user/dashboard';
     const DEFAULT_AVATAR = null;
 
     public $count = self::INIT_COUNT;

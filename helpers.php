@@ -17,6 +17,7 @@ function getStudyTime($str)
     $word = explode(' ', $str);
     return round(count($word) / 160);
 }
+
 function getPath($url)
 {
 
@@ -64,7 +65,6 @@ function excerpt($title, $cutOffLength = 120): string
     return substr($title, 0, $cutOffLength) . '...';
 
 }
-
 
 
 function getRedirectPathAfterPayment(): string
@@ -120,7 +120,6 @@ function toggleVideo($video, $videoId)
 }
 
 
-
 function getAuthors($limit)
 {
     return \App\Models\Author::query()->limit($limit)->get();
@@ -135,18 +134,18 @@ function getCategories($limit)
 
 function getAuthorById($id)
 {
-    $author =  \App\Models\Author::query()->where('id',$id)->first();
+    $author = \App\Models\Author::query()->where('id', $id)->first();
 
-    if($author)
+    if ($author)
         return $author->name;
 }
 
 
 function getCategoryById($id)
 {
-    $category =  \App\Models\Category::query()->where('id',$id)->first();
+    $category = \App\Models\Category::query()->where('id', $id)->first();
 
-    if($category)
+    if ($category)
         return $category->title;
 }
 
@@ -155,8 +154,9 @@ function isBookAvailable($bookId)
     return \App\Models\BookStock::isBookAvailable($bookId);
 }
 
-function toman($amount) {
-    return number_format($amount).' تومان';
+function toman($amount)
+{
+    return number_format($amount) . ' تومان';
 }
 
 function getTotalQuantity()
@@ -172,10 +172,16 @@ function getTotalPrice()
 function carts()
 {
     $carts = [];
-    if(Auth::user()) {
-      $carts = Auth::user()->carts;
+    if (Auth::user()) {
+        $carts = Auth::user()->carts;
     }
 
     return $carts;
+}
 
+function isActiveMenu($path)
+{
+    if (parse_url(url()->current(), PHP_URL_PATH) == $path) {
+        return 'active';
+    }
 }
