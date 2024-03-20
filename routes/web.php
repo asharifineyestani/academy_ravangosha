@@ -6,6 +6,17 @@ use App\Http\Controllers\MessageController;
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\Member\CartController;
 use \App\Http\Controllers\Public\VideoController;
+use \App\Http\Controllers\Public\ArticleController;
+
+
+
+
+
+
+Route::get('/articles', [ArticleController::class, 'index'])->name('youtube.index');
+Route::get('/articles/{id}', [ArticleController::class, 'show'])->name('youtube.show');
+
+
 
 
 #student routes
