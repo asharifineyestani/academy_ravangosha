@@ -21,23 +21,14 @@ class DatabaseSeeder extends Seeder
     {
 
 
-
-
         $this->call([
 //            UserSeeder::class,
 //            RoleSeeder::class,
 //            CategorySeeder::class,
-            YoutubeVideoSeeder::class,
+//            YoutubeVideoSeeder::class,
 
+            ArticleSeeder::class
         ]);
-
-
-
-
-
-
-
-
 
     }
 }

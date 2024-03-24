@@ -54,6 +54,9 @@ function getUserRole(): string
 function excerpt($title, $cutOffLength = 120): string
 {
 
+
+    $title = strip_tags($title);
+
     $charAtPosition = "";
     $titleLength = strlen($title);
 
@@ -63,6 +66,8 @@ function excerpt($title, $cutOffLength = 120): string
     } while ($cutOffLength < $titleLength && $charAtPosition != " ");
 
     return substr($title, 0, $cutOffLength) . '...';
+
+
 
 }
 
@@ -185,3 +190,5 @@ function isActiveMenu($path)
         return 'active';
     }
 }
+
+

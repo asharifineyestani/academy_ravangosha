@@ -1,5 +1,6 @@
 @extends('layouts.edu.master')
 @section('main')
+
     <main>
 
         <!-- =======================
@@ -84,3 +85,4 @@
 
     </main>
 @endsection
+

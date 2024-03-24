@@ -1,0 +1,11 @@
+.afc_article__body h1 {
+    font-size: 22px;
+}
+
+.afc_article__body h2 {
+    font-size: 20px;
+}
+
+.afc_header_line{
+    border-bottom: 1px solid #ddd;
+}

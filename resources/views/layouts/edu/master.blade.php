@@ -85,6 +85,7 @@
 
 	<!-- Theme CSS -->
 	<link rel="stylesheet" type="text/css" href="/edu/assets/css/style-rtl.css">
+	<link rel="stylesheet" type="text/css" href="/edu/assets/css/custom.css">
 
 </head>
 
@@ -92,7 +93,10 @@
 
 <!-- Header START -->
 
-@include('layouts.edu.partials.navbar')
+<div class=" @if(isset($line) && $line) afc_header_line @endif">
+    @include('layouts.edu.partials.navbar')
+</div>
+
 <!-- Header END -->
 
 

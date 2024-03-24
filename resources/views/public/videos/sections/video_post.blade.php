@@ -31,7 +31,7 @@
 {{--                    </div>--}}
 
                     <!-- Title -->
-                    <h5 class="card-title"><a href="#">{{$item->title}}</a>
+                    <h5 class="card-title"><a href="/youtube/videos/{{$item->id}}">{{$item->title}}</a>
                     </h5>
                     <p class="text-truncate-2 d-none d-lg-block"> {{ Str::limit($item->description, 100, '...') }}</p>
 
